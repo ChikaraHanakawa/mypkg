@@ -1,9 +1,15 @@
-name: test        #name: ワークフローの名前
-on: push          #on: いつこのワークフローを走らせるか
-jobs:             #走らせたい処理（ジョブ）のリスト
-  test:           #testというジョブを作る
-    runs-on: ubuntu-latest   #どの環境で動かすか
-    steps:                   #手続きの記述
-    - uses: actions/checkout@v3  #https://github.com/actions/checkoutのバージョン3を使用
-    - name: All test             #このジョブの名前
-      run: bash -xv ./test.bash  #テストのシェルスクリプトを走らせる
+name: test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu -22.04
+    container: ryuicihiueda/ubuntu22.04-ros2:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: build and test
+        run: |
+          rsync -av ./root/ros2_ws/src/mypkg
+          cd /root/ros2_ws
+          rosdep update
+          rosdep install -i --from-path src --rosdistro humble -y
+          bash -xv ./src/mypkg/test/test.bash /root
