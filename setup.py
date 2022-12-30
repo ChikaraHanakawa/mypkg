@@ -22,8 +22,10 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'talker = mypkg.talker:main',
-            'listener = mypkg.listener:main',
+            #'talker = mypkg.talker:main',
+            #'listener = mypkg.listener:main',
+            'img_publisher = mypkg.images_pub:main ,'
+            'img_subscriber = mypkg.images_sub:main'
         ],
     },
 )
