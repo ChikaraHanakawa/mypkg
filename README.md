@@ -1,5 +1,5 @@
 # mypkg
-こちらのリポジトリは、千葉工業大学先進工学部未来ロボティクス学科2年4Semesterの講義で取り扱われているものです.  
+こちらのリポジトリは、千葉工業大学先進工学部未来ロボティクス学科2年4Semesterの講義で取り扱われているROS2のパッケージです.  
 本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています.  
 また、まだ実装段階に移っておりませんがOpenCVを利用したノードを作成中です.  
 ![test](https://github.com/ChikaraHanakawa/mypkg/actions/workflows/test.yml/badge.svg)  
