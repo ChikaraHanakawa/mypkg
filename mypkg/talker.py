@@ -20,5 +20,5 @@ def main():
   talker = Talker(node)
   rclpy.spin(node)
 
-if __name__ == '__main__'
+if __name__ == '__main__':
   main()
