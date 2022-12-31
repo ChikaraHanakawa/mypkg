@@ -1,6 +1,7 @@
 # mypkg
 こちらのリポジトリは、千葉工業大学先進工学部未来ロボティクス学科2年4Semesterの講義で取り扱われているものです.  
-本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています.また、まだ実装段階に移っておりませんがOpenCVを利用したプログラムを作成中です.  
+本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています.  
+また、まだ実装段階に移っておりませんがOpenCVを利用したノードを作成中です.  
 ![test](https://github.com/ChikaraHanakawa/mypkg/actions/workflows/test.yml/badge.svg)  
 ↑ テスト結果を反映したバッジの画像が埋め込まれる。標準入力から読み込んだ数字を足す.  
 # 本リポジトリの概要
@@ -15,7 +16,7 @@ $ git clone https://github.com/ChikaraHanakawa/mypkg.git
 ### listener.py
 - countupというトピックからメッセージを受信する.また、`talker.py`が送信した順にterminalに出力する.  
 ### talk_listen.launch.py
-
+- 本リポジトリに含まれている２つのノードを一度に立ち上げる事が可能
 # 実行方法(run)
 1. 本リポジトリをclone後にterminal上に以下のコマンドを実行  
 ```
@@ -66,7 +67,7 @@ $ros2 launch mypkg talk_listen.launch.py
 [listener-2] [INFO] [1672469464.416683672] [listener]: Listen: 9
 [listener-2] [INFO] [1672469464.916725295] [listener]: Listen: 10
 ```
-# 必要なソフトウェア
+# 動作確認済み環境
 - ROS
   - ROS2 foxy
 - OS
