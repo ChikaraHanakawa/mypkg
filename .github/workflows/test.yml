@@ -2,7 +2,6 @@ name: test
 on: push
 jobs:
   paths:
-    - '**.md'
     - '.github/workflows/test.yml'
   test:
     runs-on: ubuntu-22.04
