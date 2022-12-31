@@ -12,8 +12,8 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 
-class ImagePublisher(Node):
-  def __init__(self):
+class ImagePublisher():
+  def __init__(self, node):
     super().__init__('image_publisher')
     self.pub = node.create_publisher(Image, 'video_frames', 10)
     self.timer = self.create_timer(timer_period, self.timer_callback)
