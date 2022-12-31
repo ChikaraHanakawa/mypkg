@@ -1,6 +1,9 @@
 name: test
 on: push
 jobs:
+  paths:
+    - '**.md'
+    - '.github/workflows/test.yml'
   test:
     runs-on: ubuntu-22.04
     container: ryuichiueda/ubuntu22.04-ros2:latest
