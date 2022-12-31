@@ -3,7 +3,7 @@
 本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています.  
 また、まだ実装段階に移っておりませんがOpenCVを利用したノードを作成中です.  
 ![test](https://github.com/ChikaraHanakawa/mypkg/actions/workflows/test.yml/badge.svg)  
-↑ テスト結果を反映したバッジの画像が埋め込まれる。標準入力から読み込んだ数字を足す.  
+↑ テスト結果を反映したバッジの画像が埋め込まれる 
 # 本リポジトリの概要
 `talker`というノードでパブリッシュし、`listener`というノードでサブスクライバしている.  
 ## 本リポジトリの使用方法
