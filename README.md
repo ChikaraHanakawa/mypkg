@@ -71,7 +71,8 @@ $ros2 launch mypkg talk_listen.launch.py
   - ROS2 foxy
   - ROS2 Humble
 - OS
-  - Ubuntu 20.04 
+  - Ubuntu 20.04 LTS  
+  - Ubuntu 22.04 LTS  
 # LICENSE
   - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます。
   - このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです
