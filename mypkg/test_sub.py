@@ -29,7 +29,7 @@ class ImageSubscriber(Node):
     cv2.waitKey(1)
 
   def main(args=None):
-    rclpy.init(args=args)
+    rclpy.init()
     image_subscriber = ImageSubscriber()
     rclpy.spin(image_subscriber)
     image_subscriber.destroy_node()

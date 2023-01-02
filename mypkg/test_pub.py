@@ -58,7 +58,7 @@ class ImagePublisher():
     cap.release() '''
 
 def main(args=None):
-  rclpy.init(args=args)
+  rclpy.init()
   image_publisher = ImagePublisher()
   rclpy.spin(image_publisher)
   image_publisher.destroy_node()
