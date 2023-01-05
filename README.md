@@ -98,7 +98,8 @@ $ros2 launch mypkg talk_listen.launch.py
 1. 一枚一枚をコマ送りのgif画像を作成する。  
 出力しているウィンドウは、動画なので作りたいgif画像を画面を見ながら確認して、  
 作成できるのがこのコードの強みだと思います。  
-<img src="https://user-images.githubusercontent.com/85380968/210795307-b55c314a-4d76-4732-895a-7a84a46234ae.gif" width="500">
+自分は作成する際に、gif画像を作成するwebサイトを用いましたが、LinuxOSを用いている方なら`convert` というコマンドでgif画像を作成することができると思います。
+<img src="https://user-images.githubusercontent.com/85380968/210795307-b55c314a-4d76-4732-895a-7a84a46234ae.gif" width="500">  
 
 2. モザイクをかける部分をコメントアウトして、他の処理を入れる。また、OpenCVで配られている重みを用いて他の物を検出させるのも良いかと思います。  
 # 動作確認済み環境
