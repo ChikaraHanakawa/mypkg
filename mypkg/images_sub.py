@@ -4,10 +4,12 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 import os
+import numpy as np
 
 dirname = 'face_images'
 cascade_filepath = "/home/chikara/ros2_ws/src/mypkg/mypkg/data/haarcascades/haarcascade_frontalface_alt2.xml"
 FaceCascade = cv2.CascadeClassifier(cascade_filepath)
+count = 0
 
 def mosaic(img, alpha):
   w = img.shape[1]
@@ -28,6 +30,7 @@ class ImageSubscriber(Node):
     self.br = CvBridge()
 
   def listener_callback(self, data):
+    global count
     self.get_logger().info('Receiving video frame')
     current_frame = self.br.imgmsg_to_cv2(data)
     gray = cv2.cvtColor(current_frame, cv2.COLOR_BGR2GRAY)
@@ -35,19 +38,18 @@ class ImageSubscriber(Node):
     if not os.path.exists(dirname):
       os.mkdir(dirname)
     if len(Face) > 0:
-      count = 0
       for (x, y, w, h) in Face:
         #current_frame[y:y+h, x:x+w] = mosaic(current_frame[y:y+h, x:x+w], 0.07)
         cv2.rectangle(current_frame, (x,y),(x+w,y+h),(255,0,0),thickness=2)
-        count += 1
         count_padded = '%05d' % count
         write_file = count_padded + ".png"
         cv2.imwrite(os.path.join(dirname, write_file), current_frame)
+        count += 1
 
     #self.get_logger().info('Receiving video frame')
     #current_frame = self.br.imgmsg_to_cv2(data)
     cv2.imshow("camera", current_frame)
-    cv2.waitKey(10)
+    cv2.waitKey(1)
 
 def main(args=None):
   rclpy.init(args=args)
