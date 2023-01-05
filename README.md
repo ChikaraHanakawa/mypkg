@@ -16,7 +16,7 @@ $ git clone https://github.com/ChikaraHanakawa/mypkg.git
 ### listener.py
 - countupというトピックからメッセージを受信する.また、`talker.py`が送信した順にterminalに出力  
 ### talk_listen.launch.py
-- 本リポジトリに含まれている２つのノードを一度に立ち上げる事が可能
+- 本リポジトリに含まれている２つのノード(talker&listener)を一度に立ち上げる事が可能
 ### images_pub.py
 - `video_frames`というトピックを通じて、メッセージを送信する。メッセージの型は画像のImage
 ### images_sub.py
