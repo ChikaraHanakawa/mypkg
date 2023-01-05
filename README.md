@@ -1,5 +1,6 @@
 # mypkg
 ![test](https://github.com/ChikaraHanakawa/mypkg/actions/workflows/test.yml/badge.svg)  
+![images](https://github.com/ChikaraHanakawa/mypkg/actions/workflows/images.yml/badge.svg)  
 こちらのリポジトリは、千葉工業大学先進工学部未来ロボティクス学科2年4Semesterの講義で取り扱われているROS2のパッケージです。  
 本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています。  
 また、OpenCVを利用したwebカメラを用いて顔を検出してモザイク処理をするノードが含まれています。
