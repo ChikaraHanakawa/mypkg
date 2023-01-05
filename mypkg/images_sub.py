@@ -1,3 +1,6 @@
+# © 2022 Chikara Hanakawa
+# SPDX-FileCopyrightText: 2022 Chikara Hanakawa
+# SPDX-License-Identifier: BSD-3-Clause
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
