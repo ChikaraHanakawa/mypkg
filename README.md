@@ -17,7 +17,7 @@ $ git clone https://github.com/ChikaraHanakawa/mypkg.git
 ### talk_listen.launch.py
 - 本リポジトリに含まれている２つのノードを一度に立ち上げる事が可能
 ### images_pub.py
-- video_framesというトピックを通じて、メッセージを送信する。メッセージの型は画像のImage
+- `video_frames`というトピックを通じて、メッセージを送信する。メッセージの型は画像のImage
 ### images_sub.py
 - video_framesというトピックを通じて、メッセージを受信する。人の顔を検出して、自動でモザイクをかける。また、モザイクをかけた状態で出力し、1フレーム毎に画像をface_imagesディレクトリに保存する。
 # 実行方法 (run)
