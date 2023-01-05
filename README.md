@@ -34,7 +34,25 @@ $ros2 run mypkg listener
 4. 以上を実行後、terminal2に出力  
 5. `Ctrl + \`で終了  
 ## image_publisher&image_subscriber
-## 実行結果
+1. 本リポジトリをclone後にterminal上に以下のコマンドを実行
+```
+$ros2 run mypkg img_publisher
+```
+2. 実行後に`Ctrl + Shift + t`を入力
+3. 新しいterminal(terminal2とする)に以下のコマンドを実行
+```
+$ros2 run mypkg img_subscriber
+```
+4. 以上を実行後に`current_frame`というウィンドウが出力される
+5. 人の顔を検出して、モザイクを勝手にかける
+6. `Ctrl + \`で終了
+7. terminal2で実行したディレクトリ内にface_imagesディレクトリが出来ているの確認する
+8. 撮影した画像を確認する
+```
+$eog 00000.png
+```
+# 実行結果
+## talker&listener
 - terminal2に以下のように出力されれば成功  
 ```
 [INFO] [1672469276.221867694] [listener]: Listen: 0
@@ -51,6 +69,8 @@ $ros2 run mypkg listener
 [INFO] [1672469281.716991408] [listener]: Listen: 11
 [INFO] [1672469282.216778045] [listener]: Listen: 12
 ```
+## image_publisher&image_subscriber
+- terminal2にコマンドを実行後に、webカメラからの映像が出力される
 # 実行方法 (launch)
 1. terminalに以下のコマンドを実行  
 ```
