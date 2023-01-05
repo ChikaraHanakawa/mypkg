@@ -39,15 +39,12 @@ class ImageSubscriber(Node):
       os.mkdir(dirname)
     if len(Face) > 0:
       for (x, y, w, h) in Face:
-        #current_frame[y:y+h, x:x+w] = mosaic(current_frame[y:y+h, x:x+w], 0.07)
-        cv2.rectangle(current_frame, (x,y),(x+w,y+h),(255,0,0),thickness=2)
+        current_frame[y:y+h, x:x+w] = mosaic(current_frame[y:y+h, x:x+w], 0.07)
         count_padded = '%05d' % count
         write_file = count_padded + ".png"
         cv2.imwrite(os.path.join(dirname, write_file), current_frame)
         count += 1
 
-    #self.get_logger().info('Receiving video frame')
-    #current_frame = self.br.imgmsg_to_cv2(data)
     cv2.imshow("camera", current_frame)
     cv2.waitKey(1)
 
