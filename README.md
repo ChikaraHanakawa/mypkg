@@ -1,22 +1,27 @@
 # mypkg
 ![test](https://github.com/ChikaraHanakawa/mypkg/actions/workflows/test.yml/badge.svg)  
-こちらのリポジトリは、千葉工業大学先進工学部未来ロボティクス学科2年4Semesterの講義で取り扱われているROS2のパッケージです.  
-本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています.  
-また、まだ実装段階に移っておりませんがOpenCVを利用したノードを作成中です.  
+こちらのリポジトリは、千葉工業大学先進工学部未来ロボティクス学科2年4Semesterの講義で取り扱われているROS2のパッケージです。  
+本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています。  
+また、OpenCVを利用したwebカメラを用いて顔を検出してモザイク処理をするノードが含まれています。
 # 本リポジトリの概要
-`talker`というノードでパブリッシュし、`listener`というノードでサブスクライバしている.  
+`talker`というノードでパブリッシュし、`listener`というノードでサブスクライバしている。  
+`image_publisher`というノードでパブリッシュし、`image_subscriber`というノードでサブスクライバしています。  
 ## 本リポジトリの使用方法
-- terminal上にて以下のコマンドを実行  
 ```
 $ git clone https://github.com/ChikaraHanakawa/mypkg.git
 ```
 ### talker.py
-- countupというトピックを通じて、メッセージを送信する.メッセージの型は16ビットの符号付き整数.  
+- countupというトピックを通じて、メッセージを送信する。メッセージの型は16ビットの符号付き整数  
 ### listener.py
-- countupというトピックからメッセージを受信する.また、`talker.py`が送信した順にterminalに出力する.  
+- countupというトピックからメッセージを受信する.また、`talker.py`が送信した順にterminalに出力  
 ### talk_listen.launch.py
 - 本リポジトリに含まれている２つのノードを一度に立ち上げる事が可能
-# 実行方法(run)
+### images_pub.py
+- video_framesというトピックを通じて、メッセージを送信する。メッセージの型は画像のImage
+### images_sub.py
+- video_framesというトピックを通じて、メッセージを受信する。人の顔を検出して、自動でモザイクをかける。また、モザイクをかけた状態で出力し、1フレーム毎に画像をface_imagesディレクトリに保存する。
+# 実行方法 (run)
+## talker&listener
 1. 本リポジトリをclone後にterminal上に以下のコマンドを実行  
 ```
 $ros2 run mypkg talker
@@ -28,24 +33,25 @@ $ros2 run mypkg listener
 ```
 4. 以上を実行後、terminal2に出力  
 5. `Ctrl + \`で終了  
+## image_publisher&image_subscriber
 ## 実行結果
 - terminal2に以下のように出力されれば成功  
 ```
-[INFO] [1672469276.221867694] [listener]: Listen: 10
-[INFO] [1672469276.717008380] [listener]: Listen: 11
-[INFO] [1672469277.216945737] [listener]: Listen: 12
-[INFO] [1672469277.716793518] [listener]: Listen: 13
-[INFO] [1672469278.216785270] [listener]: Listen: 14
-[INFO] [1672469278.716751346] [listener]: Listen: 15
-[INFO] [1672469279.216718907] [listener]: Listen: 16
-[INFO] [1672469279.716677141] [listener]: Listen: 17
-[INFO] [1672469280.216946508] [listener]: Listen: 18
-[INFO] [1672469280.716849977] [listener]: Listen: 19
-[INFO] [1672469281.216855857] [listener]: Listen: 20
-[INFO] [1672469281.716991408] [listener]: Listen: 21
-[INFO] [1672469282.216778045] [listener]: Listen: 22
+[INFO] [1672469276.221867694] [listener]: Listen: 0
+[INFO] [1672469276.717008380] [listener]: Listen: 1
+[INFO] [1672469277.216945737] [listener]: Listen: 2
+[INFO] [1672469277.716793518] [listener]: Listen: 3
+[INFO] [1672469278.216785270] [listener]: Listen: 4
+[INFO] [1672469278.716751346] [listener]: Listen: 5
+[INFO] [1672469279.216718907] [listener]: Listen: 6
+[INFO] [1672469279.716677141] [listener]: Listen: 7
+[INFO] [1672469280.216946508] [listener]: Listen: 8
+[INFO] [1672469280.716849977] [listener]: Listen: 9
+[INFO] [1672469281.216855857] [listener]: Listen: 10
+[INFO] [1672469281.716991408] [listener]: Listen: 11
+[INFO] [1672469282.216778045] [listener]: Listen: 12
 ```
-# 実行方法(launch)
+# 実行方法 (launch)
 1. terminalに以下のコマンドを実行  
 ```
 $ros2 launch mypkg talk_listen.launch.py
@@ -75,6 +81,6 @@ $ros2 launch mypkg talk_listen.launch.py
   - Ubuntu 22.04 LTS  
 # LICENSE
   - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます。
-  - このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです
+  - このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです。
     - [ryuichiueda/my_slides robosys_2022](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2022)
   - © 2022 Chikara Hanakawa
