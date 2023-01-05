@@ -5,12 +5,12 @@
 本リポジトリには、講義内で使用したパッケージがあり、`talker`と`listener`の２つのノードが含まれています。  
 また、OpenCVを利用した顔を検出してモザイク処理をするノードが含まれています。こちらのノードは、webカメラを用いているものになっています。
 # 本リポジトリの概要
-`talker`というノードでパブリッシュし、`listener`というノードでサブスクライバしている。  
-`image_publisher`というノードでパブリッシュし、`image_subscriber`というノードでサブスクライバしています。  
-## 本リポジトリの使用方法
-```
-$ git clone https://github.com/ChikaraHanakawa/mypkg.git
-```
+- `talker`というノードでパブリッシュし、`listener`というノードでサブスクライバしている。 
+<img src="https://user-images.githubusercontent.com/85380968/210802232-269d1745-c1b2-4131-93e9-5ab81d307339.jpg" width="500">  
+ 
+ - `image_publisher`というノードでパブリッシュし、`image_subscriber`というノードでサブスクライバしています。  
+<img src="https://user-images.githubusercontent.com/85380968/210801527-eb1f5d5a-2eb0-4174-b021-c06909ee27f7.jpg" width="500">  
+
 ### talker.py
 - countupというトピックを通じて、メッセージを送信する。メッセージの型は16ビットの符号付き整数  
 ### listener.py
@@ -20,7 +20,12 @@ $ git clone https://github.com/ChikaraHanakawa/mypkg.git
 ### images_pub.py
 - `video_frames`というトピックを通じて、メッセージを送信する。メッセージの型は画像のImage
 ### images_sub.py
-- video_framesというトピックを通じて、メッセージを受信する。人の顔を検出して、自動でモザイクをかける。また、モザイクをかけた状態で出力し、1フレーム毎に画像をface_imagesディレクトリに保存する。
+- video_framesというトピックを通じて、メッセージを受信する。
+  人の顔を検出して、自動でモザイクをかける。また、モザイクをかけた状態で出力し、1フレーム毎に画像をface_imagesディレクトリに保存する。
+## 本リポジトリの使用方法
+```
+$ git clone https://github.com/ChikaraHanakawa/mypkg.git
+```
 # 実行方法 (run)
 ## talker&listener
 1. 本リポジトリをclone後にterminal上に以下のコマンドを実行  
