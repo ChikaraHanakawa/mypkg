@@ -70,8 +70,11 @@ $eog 00000.png
 [INFO] [1672469282.216778045] [listener]: Listen: 12
 ```
 ## image_publisher&image_subscriber
-- terminal2にコマンドを実行後に、webカメラからの映像が出力される
+- terminal2にコマンドを実行後に、webカメラからの映像が出力されれば、成功
+<img src = "https://user-images.githubusercontent.com/85380968/210783726-44cda4b0-6af4-4090-b00d-fc2bea074c6a.png" width="500">  
+
 # 実行方法 (launch)
+## talker&listener
 1. terminalに以下のコマンドを実行  
 ```
 $ros2 launch mypkg talk_listen.launch.py
