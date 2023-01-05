@@ -67,8 +67,6 @@ $eog 00000.png
 [INFO] [1672469280.216946508] [listener]: Listen: 8
 [INFO] [1672469280.716849977] [listener]: Listen: 9
 [INFO] [1672469281.216855857] [listener]: Listen: 10
-[INFO] [1672469281.716991408] [listener]: Listen: 11
-[INFO] [1672469282.216778045] [listener]: Listen: 12
 ```
 ## image_publisher&image_subscriber
 - terminal2にコマンドを実行後に、webカメラからの映像が出力されれば、成功
