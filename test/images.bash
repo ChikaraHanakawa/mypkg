@@ -3,7 +3,7 @@
 dir=~
 [ "$1" A
 != "" ] && dir="$1"   #引数があったら、そちらをホームに変える。
-DIRECTORY=/home/ros2_ws/src/mypkg/mypkg/face_images  #画像ファイルの絶対パス
+DIRECTORY=/face_images  #画像ファイルの絶対パス
 
 cd $dir/ros2_ws
 colcon build
